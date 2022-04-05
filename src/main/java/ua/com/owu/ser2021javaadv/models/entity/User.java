@@ -8,6 +8,8 @@ import lombok.ToString;
 import ua.com.owu.ser2021javaadv.models.entity.Pasport;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -21,9 +23,13 @@ public class User {
     private int id;
     private String name;
     private int age;
-    @OneToOne(cascade = CascadeType.ALL,fetch =FetchType.LAZY )
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "passport_id")
     @ToString.Exclude
     private Pasport passport;
+
+    @OneToMany
+    private List<Card> cards = new ArrayList<>();
+
 
 }
