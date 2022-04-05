@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.com.owu.ser2021javaadv.dao.UserDAO;
-import ua.com.owu.ser2021javaadv.models.User;
+import ua.com.owu.ser2021javaadv.models.entity.User;
 import ua.com.owu.ser2021javaadv.models.dto.UserWithPassportDTO;
 
 import java.util.List;

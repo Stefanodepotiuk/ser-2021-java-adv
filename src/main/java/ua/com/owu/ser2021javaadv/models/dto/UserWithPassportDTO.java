@@ -1,7 +1,7 @@
 package ua.com.owu.ser2021javaadv.models.dto;
 
 import lombok.Data;
-import ua.com.owu.ser2021javaadv.models.User;
+import ua.com.owu.ser2021javaadv.models.entity.User;
 
 @Data
 

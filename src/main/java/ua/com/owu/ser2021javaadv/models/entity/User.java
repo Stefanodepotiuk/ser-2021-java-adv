@@ -1,4 +1,4 @@
-package ua.com.owu.ser2021javaadv.models;
+package ua.com.owu.ser2021javaadv.models.entity;
 
 
 import lombok.Getter;
