@@ -28,8 +28,10 @@ public class User {
     @ToString.Exclude
     private Pasport passport;
 
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Card> cards = new ArrayList<>();
+
 
 
 }

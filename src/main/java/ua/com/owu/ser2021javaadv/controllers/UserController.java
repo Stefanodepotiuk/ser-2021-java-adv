@@ -56,4 +56,10 @@ public class UserController {
         userDAO.deleteById(id);
         return (List<User>) findAll();
     }
+
+    //    lesson_4
+    @PostMapping("/saveWithCars")
+    public void saveUserWithCars(@RequestBody User user) {
+        userDAO.save(user);
+    }
 }
