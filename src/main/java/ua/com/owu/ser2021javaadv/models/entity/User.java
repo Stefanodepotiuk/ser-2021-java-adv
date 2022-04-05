@@ -29,9 +29,7 @@ public class User {
     private Pasport passport;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Card> cards = new ArrayList<>();
+
 
 
 
