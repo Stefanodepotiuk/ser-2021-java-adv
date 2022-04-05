@@ -28,7 +28,9 @@ public class User {
     @ToString.Exclude
     private Pasport passport;
 
-
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private List<Card> cards;
 
 
 
