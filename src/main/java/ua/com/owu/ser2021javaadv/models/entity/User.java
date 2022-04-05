@@ -37,5 +37,13 @@ public class User {
 
     private List<Card> cards;
 
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "user_city",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "city_id")
+    )
+    private List<City> cities;
+
 
 }
