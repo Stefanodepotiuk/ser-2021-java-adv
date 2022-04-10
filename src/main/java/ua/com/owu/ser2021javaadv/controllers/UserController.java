@@ -5,8 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.com.owu.ser2021javaadv.dao.UserDAO;
+import ua.com.owu.ser2021javaadv.models.dto.UserDTO;
 import ua.com.owu.ser2021javaadv.models.entity.User;
 import ua.com.owu.ser2021javaadv.models.dto.UserWithPassportDTO;
+import ua.com.owu.ser2021javaadv.service.IUserService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 public class UserController {
 
     private UserDAO userDAO;
+    private IUserService userServicePage;
 
     @GetMapping("")
     public ResponseEntity<List<UserWithPassportDTO>> findAll() {
@@ -61,5 +64,13 @@ public class UserController {
     @PostMapping("/saveWithCars")
     public void saveUserWithCars(@RequestBody User user) {
         userDAO.save(user);
+    }
+
+//    lesson5
+
+    @PostMapping("/all")
+    public List<UserDTO> saveUsersBatch(@RequestBody List<User> users) {
+        userDAO.saveAll(users);
+        return userServicePage.findAllUserDTO();
     }
 }
